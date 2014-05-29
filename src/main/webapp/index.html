@@ -1,0 +1,71 @@
+<!--
+-------------------------------------------------------------------------------
+# Copyright (c) 2014 Proxima Centauri SRL <info@proxima-centauri.it>.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the GNU Public License v3.0
+# which accompanies this distribution, and is available at
+# http://www.gnu.org/licenses/gpl.html
+# 
+# Contributors:
+#     Proxima Centauri SRL <info@proxima-centauri.it> - initial API and implementation
+#-------------------------------------------------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="en" ng-app="ienergyutil">
+<head>
+<title>IEnergyUtil</title>
+</head>
+<!-- Le styles -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<style>
+body {
+	padding-top: 60px;
+	/* 60px to make the container go all the way to the bottom of the topbar */
+}
+</style>
+
+<body>
+
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse"
+					data-target=".nav-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="brand">IEnergyUtil 2</a>
+				<div class="nav-collapse collapse"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div ng-view></div>
+	</div>
+
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-datetimepicker.min.js"></script>
+	<script src="js/moment.min.js"></script>
+
+
+	<!--  angular js script -->
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-route.min.js"></script>
+	<script src="js/ui-bootstrap-custom-tpls-0.7.0.min.js"></script>
+
+	<script src="js/controller.js"></script>
+	<script src="js/app.js"></script>
+
+	<!-- Gauge -->
+	<script src="js/raphael.2.1.0.min.js"></script>
+	<script src="js/justgage.1.0.1.min.js"></script>
+
+	<!-- charts -->
+
+	<script src="js/highstock.js"></script>
+	<script src="js/highcharts-more.js"></script>
+</body>
+</html>

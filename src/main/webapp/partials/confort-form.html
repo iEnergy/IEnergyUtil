@@ -1,0 +1,51 @@
+<!--
+-------------------------------------------------------------------------------
+# Copyright (c) 2014 Proxima Centauri SRL <info@proxima-centauri.it>.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the GNU Public License v3.0
+# which accompanies this distribution, and is available at
+# http://www.gnu.org/licenses/gpl.html
+# 
+# Contributors:
+#     Proxima Centauri SRL <info@proxima-centauri.it> - initial API and implementation
+#-------------------------------------------------------------------------------
+-->
+<div class="container">
+	<form method="post" class="form-horizontal" ng-submit="submit()">
+
+		<div class="control-group">
+			<label class="control-label" for="inputName">Name (unique)</label>
+			<div class="controls">
+				<input type="text" name="name" ng-model="indicator.name" required
+					ng-disabled="! newIndicator">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="inputDescription">Description</label>
+			<div class="controls">
+				<input type="text" name="description"
+					ng-model="indicator.description">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="inputType">Type</label>
+			<div class="controls">
+				<select ng-model="indicator.type" ng-options="c for c in types" required>
+					<option value="">-- choose type --</option>
+				</select>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="inputFunction">Function</label>
+			<div class="controls">
+				<select ng-model="indicator.function"
+					ng-options="c for c in functionType" required>
+					<option value="">-- choose function --</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary">Save</button>
+		</div>
+	</form>
+</div>

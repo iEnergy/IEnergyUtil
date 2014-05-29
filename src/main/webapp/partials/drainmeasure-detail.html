@@ -1,0 +1,95 @@
+<!--
+-------------------------------------------------------------------------------
+# Copyright (c) 2014 Proxima Centauri SRL <info@proxima-centauri.it>.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the GNU Public License v3.0
+# which accompanies this distribution, and is available at
+# http://www.gnu.org/licenses/gpl.html
+# 
+# Contributors:
+#     Proxima Centauri SRL <info@proxima-centauri.it> - initial API and implementation
+#-------------------------------------------------------------------------------
+-->
+<div class="container">
+	<h1>Details</h1>
+	<form method="post" class="form-horizontal" ng-submit="submit()">
+
+		<div class="control-group">
+			<label class="control-label" for="inputName">Name (unique)</label>
+			<div class="controls">
+				<input type="text" name="drain" ng-model="drain.drain" required
+					ng-disabled="! newDrain">
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="inputDescription">Description</label>
+			<div class="controls">
+				<input type="text" name="description" ng-model="drain.description">
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="inputDescription">Unit (ex: W)</label>
+			<div class="controls">
+				<input type="text" name="unit" ng-model="drain.unit" required>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="inputDesc">Real</label>
+			<div class="controls">
+				<input type="checkbox" ng-model="drain.real" disabled="disabled">
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="inputDesc">History</label>
+			<div class="controls">
+				<input type="checkbox" ng-model="drain.keepHistory">
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="inputDesc">History Function</label>
+			<div class="controls">
+				<select ng-model="drain.historyFunction"
+					ng-options="c for c in historyFunction" required>
+					<option value="">-- choose function --</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="inputDesc">Measure Aggregate Function</label>
+			<div class="controls">
+				<select ng-model="drain.aggregationFunction"
+					ng-options="c for c in aggregationFunction">
+					<option value="">-- choose function --</option>
+				</select>
+			</div>
+		</div>
+
+		<fieldset ng-show="! drain.real">
+			<legend>
+				Legend
+				<button class="btn btn-primary" type="button" ng-click="add()">Add</button>
+			</legend>
+			<div class="control-group" ng-repeat="item in drain.formula">
+				<label class="control-label">Formula Element </label>
+				<div class="controls">
+					<div class="input-prepend input-append">
+						<input type="text" ng-model="item.drain"> 
+						<input type="text" ng-model="item.sign">
+						<button class="remove btn btn-primary" type="button"
+							ng-click="remove($index)">Remove</button>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary">Save</button>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,86 @@
+<!--
+-------------------------------------------------------------------------------
+# Copyright (c) 2014 Proxima Centauri SRL <info@proxima-centauri.it>.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the GNU Public License v3.0
+# which accompanies this distribution, and is available at
+# http://www.gnu.org/licenses/gpl.html
+# 
+# Contributors:
+#     Proxima Centauri SRL <info@proxima-centauri.it> - initial API and implementation
+#-------------------------------------------------------------------------------
+-->
+<div class="container-fluid">
+	<div class="page-header">
+		<div class="page-header">
+
+			<h4>
+				Drain measure and management <a class="btn btn-primary"
+					href="#/drainmeasure/new">Add virtual drain</a>
+			</h4>
+
+			<form class="form-inline">
+				<div class="input-append">
+					<select ng-model="drain" ng-options="d.drain for d in drains | orderBy:'drain'"
+						ng-change="newDrain()">
+						<option value="">-- choose drain --</option>
+					</select>
+				</div>
+			</form>
+		</div>
+		<div class="container-fuild">
+			<h2>Detail</h2>
+
+			<div class="row">
+				<div class="span10">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+							</tr>
+						</thead>
+						<tr>
+							<td><b>Name</b></td>
+							<td>{{drain.drain}}</td>
+						</tr>
+						<tr>
+							<td><b>Unit</b></td>
+							<td>{{drain.unit}}</td>
+						</tr>
+
+						<tr>
+							<td><b>Real</b></td>
+							<td>{{drain.real}}</td>
+						</tr>
+
+						<tr>
+							<td><b>History</b></td>
+							<td>{{drain.keepHistory}}</td>
+						</tr>
+
+						<tr>
+							<td><b>Aggregate Function</b></td>
+							<td>{{drain.aggregationFunction}}</td>
+						</tr>
+						<tr>
+							<td><b>History Function</b></td>
+							<td>{{drain.historyFunction}}</td>
+						</tr>
+					</table>
+
+					<a class="btn btn-primary" href="#/drainmeasure/{{drain.drain}}">Modify
+						drain</a>
+				</div>
+				<div class="span5">
+					<div id="gauge" style="width: 300px; height: 240px"></div>
+				</div>
+
+				<div class="span5">
+					<div>
+						<h3>{{measure.time}}</h3>
+					</div>
+				</div>
+			</div>
+
+		</div>
