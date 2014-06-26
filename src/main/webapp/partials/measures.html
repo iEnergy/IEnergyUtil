@@ -43,7 +43,17 @@
 					<option>DAY</option>
 					<option>MONTH</option>
 					<option>YEAR</option>
-				</select> <label class="checkbox"> <input type="checkbox"
+				</select> 
+				
+			   <select ng-model="measureAggregation">
+					<option value="">-- aggregation function --</option>
+					<option>MIN</option>
+					<option>MAX</option>
+					<option>SUM</option>
+					<option>AVG</option>
+				</select> 
+				
+				<label class="checkbox"> <input type="checkbox"
 					ng-model="details"> Details
 				</label>
 				<button type="submit" class="btn" ng-click="load();">Load</button>

@@ -1,12 +1,12 @@
 /*
  *  Copyright (c) 2014 Proxima Centauri SRL <info@proxima-centauri.it>.
-* All rights reserved. This program and the accompanying materials
-* are made available under the terms of the GNU Public License v3.0
-* which accompanies this distribution, and is available at
-* http://www.gnu.org/licenses/gpl.html
-* 
-* Contributors:
-*     Proxima Centauri SRL <info@proxima-centauri.it> - initial API and implementation
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the GNU Public License v3.0
+ * which accompanies this distribution, and is available at
+ * http://www.gnu.org/licenses/gpl.html
+ * 
+ * Contributors:
+ *     Proxima Centauri SRL <info@proxima-centauri.it> - initial API and implementation
  */
 var baseUrl = '';
 
@@ -336,6 +336,11 @@ function MeasureCtrl($http, $log, $scope, $timeout) {
 		// handle time aggregation
 		if ($scope.timeAggregation != undefined) {
 			param = param + '&timeAggregation=' + $scope.timeAggregation;
+		}
+
+		// handle measure aggregation
+		if ($scope.measureAggregation != undefined) {
+			param = param + '&measureAggregation=' + $scope.measureAggregation;
 		}
 		return param;
 	}
